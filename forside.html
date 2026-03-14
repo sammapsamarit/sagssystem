@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forside</title>
+
+<link rel="stylesheet" href="forside.css">
+<link rel="icon" href="malerfirma.png">
+
+</head>
+
+<body>
+
+<div class="backgroundDesign"></div>
+
+<main class="container">
+
+<header class="header">
+
+<h1 id="welcomeText">
+Hej 👋
+</h1>
+
+<p class="subtitle">
+Velkommen tilbage
+</p>
+
+</header>
+
+
+
+<section class="cards">
+
+<div class="statCard">
+
+<span>Aktive opgaver</span>
+<h2 id="activeTasks">0</h2>
+
+</div>
+
+
+<div class="statCard">
+
+<span>Timer denne uge</span>
+<h2 id="weekHours">0:00</h2>
+
+</div>
+
+</section>
+
+<button id="chefBtn" class="chefBtn" style="display:none;">
+    René oversigt
+    </button>
+
+
+
+<button class="quickBtn" id="quickTimeBtn">
+
+Registrer timer
+
+</button>
+
+</main>
+
+
+
+<!-- BUND MENU -->
+
+<div class="bottomBar">
+
+<button class="menuButton" id="menuButton">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+
+<div class="menuPopup" id="menuPopup">
+
+    <button onclick="location.href='forside.html'">Forside</button>
+    <button onclick="location.href='opgaver.html'">Opgaver</button>
+    <button onclick="location.href='timer.html'">Registrer timer</button>
+    <button onclick="location.href='profil.html'">Profil</button>
+    
+    <button id="logoutBtn" class="logoutBtn">
+    Log ud
+    </button>
+    
+    </div>
+
+
+<script type="module" src="forside.js"></script>
+
+</body>
+</html>

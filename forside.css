@@ -1,0 +1,337 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    }
+    
+    body{
+    min-height:100vh;
+    padding:20px;
+    padding-bottom:120px;
+    color:#111827;
+    background:linear-gradient(180deg,#eef2ff 0%,#f7f9ff 100%);
+    position:relative;
+    overflow-x:hidden;
+    }
+    
+    
+    
+    /* DEKORATIVE BLÅ STREGER */
+    
+    body::before{
+    
+    content:"";
+    position:fixed;
+    
+    top:-120px;
+    right:-120px;
+    
+    width:320px;
+    height:320px;
+    
+    background:radial-gradient(circle,#3050b5 0%,transparent 70%);
+    
+    opacity:0.15;
+    
+    z-index:-1;
+    
+    }
+    
+    body::after{
+    
+    content:"";
+    position:fixed;
+    
+    bottom:-150px;
+    left:-150px;
+    
+    width:350px;
+    height:350px;
+    
+    background:radial-gradient(circle,#1f3c88 0%,transparent 70%);
+    
+    opacity:0.12;
+    
+    z-index:-1;
+    
+    }
+    
+    
+    
+    /* CONTAINER */
+    
+    .container{
+    
+    max-width:600px;
+    margin:auto;
+    
+    }
+    
+    
+    
+    /* HEADER */
+    
+    .header{
+    
+    margin-bottom:30px;
+    
+    }
+    
+    .header h1{
+    
+    font-size:30px;
+    font-weight:700;
+    color:#111827;
+    
+    }
+    
+    .subtitle{
+    
+    font-size:14px;
+    color:#6b7280;
+    
+    }
+    
+    
+    
+    /* CARDS */
+    
+    .cards{
+    
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:25px;
+    
+    }
+    
+    .statCard{
+    
+    background:white;
+    
+    border-radius:18px;
+    
+    padding:20px;
+    
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    
+    display:flex;
+    flex-direction:column;
+    
+    }
+    
+    .statCard span{
+    
+    font-size:13px;
+    color:#6b7280;
+    
+    }
+    
+    .statCard h2{
+    
+    font-size:32px;
+    margin-top:6px;
+    color:#1f3c88;
+    
+    }
+    
+    
+    
+    /* QUICK BUTTON */
+    
+    .quickBtn{
+    
+    width:100%;
+    
+    background:linear-gradient(90deg,#1f3c88,#3050b5);
+    
+    color:white;
+    
+    border:none;
+    
+    padding:16px;
+    
+    border-radius:16px;
+    
+    font-size:16px;
+    
+    font-weight:600;
+    
+    cursor:pointer;
+    
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    
+    /* NY AFSTAND */
+    margin-bottom:20px;
+    
+    }
+    
+    
+    
+    /* BUND MENU */
+    
+    .bottomBar{
+    
+    position:fixed;
+    bottom:0;
+    left:0;
+    
+    width:100%;
+    height:80px;
+    
+    background:linear-gradient(90deg,#1f3c88,#3050b5);
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    
+    }
+    
+    
+    
+    /* MENU BUTTON */
+    
+    .menuButton{
+    
+    width:70px;
+    height:70px;
+    
+    background:white;
+    
+    border-radius:50%;
+    
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    
+    gap:6px;
+    
+    cursor:pointer;
+    
+    transform:translateY(-25px);
+    
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    
+    border:none;
+    
+    }
+    
+    .menuButton span{
+    
+    width:24px;
+    height:3px;
+    
+    background:#1f3c88;
+    
+    border-radius:3px;
+    
+    }
+    
+    
+    
+    /* MENU POPUP */
+    
+    .menuPopup{
+    
+    position:fixed;
+    
+    left:50%;
+    bottom:-260px;
+    
+    transform:translateX(-50%);
+    
+    width:240px;
+    
+    background:white;
+    
+    border-radius:16px;
+    
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    
+    display:flex;
+    flex-direction:column;
+    
+    transition:0.35s;
+    
+    }
+    
+    .menuPopup.active{
+    
+    bottom:110px;
+    
+    }
+    
+    .menuPopup button{
+    
+    padding:16px;
+    
+    border:none;
+    
+    background:none;
+    
+    font-size:15px;
+    
+    cursor:pointer;
+    
+    }
+    
+    .menuPopup button:not(:last-child){
+    
+    border-bottom:1px solid #eef2ff;
+    
+    }
+    
+    .logoutBtn{
+    color:#be123c;
+    font-weight:600;
+    }
+    
+    
+    
+    /* CHEF BUTTON */
+    
+    .chefBtn{
+    
+    width:100%;
+    
+    padding:16px;
+    
+    border:none;
+    
+    border-radius:16px;
+    
+    background:linear-gradient(90deg,#1f3c88,#3050b5);
+    
+    color:white;
+    
+    font-size:16px;
+    
+    font-weight:600;
+    
+    cursor:pointer;
+    
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    
+    transition:all 0.2s ease;
+
+    margin-bottom:20px;
+    
+    }
+    
+    
+    
+    /* HOVER / PRESS */
+    
+    .chefBtn:active{
+    
+    transform:scale(0.97);
+    
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    
+    }
+    

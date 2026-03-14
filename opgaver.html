@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opgaver</title>
+  <link rel="icon" href="malerfirma.png">
+  <link rel="stylesheet" href="opgaver.css">
+</head>
+<body>
+
+  <main class="pageContent">
+    <header class="pageHeader">
+      <div>
+        <p class="eyebrow">Sagstyring</p>
+        <h1>Opgaver</h1>
+      </div>
+
+      <button id="createTaskBtn" class="primaryBtn" type="button">
+        + Opret opgave
+      </button>
+    </header>
+
+    <section class="sectionBlock">
+      <div class="sectionHeader">
+        <h2>Aktive opgaver</h2>
+        <span id="activeCount" class="countBadge">0</span>
+      </div>
+      <div id="activeTasks"></div>
+    </section>
+
+    <section class="sectionBlock">
+      <div class="sectionHeader">
+        <h2>Afsluttede opgaver</h2>
+        <span id="completedCount" class="countBadge muted">0</span>
+      </div>
+      <div id="completedTasks"></div>
+    </section>
+  </main>
+
+  <!-- OPRET / REDIGER -->
+  <div id="taskModal" class="modal">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <h3 id="taskModalTitle">Opret opgave</h3>
+        <button class="closeModal" data-close="taskModal" type="button">✕</button>
+      </div>
+
+      <div class="fieldGroup">
+        <label for="taskName">Navn</label>
+        <input id="taskName" type="text" placeholder="Navn på opgaven">
+      </div>
+
+      <div class="fieldGroup">
+        <label for="taskAddress">Adresse</label>
+        <input id="taskAddress" type="text" placeholder="Adresse">
+      </div>
+
+      <div class="fieldGroup">
+        <label for="taskNotes">Noter</label>
+        <textarea id="taskNotes" placeholder="Noter"></textarea>
+      </div>
+
+      <div class="fieldGroup">
+        <label>Materialer</label>
+
+        <div class="dropdown">
+          <button id="materialDropdownBtn" class="dropdownBtn" type="button">
+            Vælg materialer
+          </button>
+
+          <div id="materialDropdown" class="dropdownMenu"></div>
+        </div>
+
+        <div id="selectedMaterials" class="selectedMaterials"></div>
+      </div>
+
+      <button id="saveTaskBtn" class="primaryBtn" type="button">Gem opgave</button>
+    </div>
+  </div>
+
+  <!-- DETALJER -->
+  <div id="detailsModal" class="modal">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <h3>Opgave detaljer</h3>
+        <button class="closeModal" data-close="detailsModal" type="button">✕</button>
+      </div>
+
+      <div id="detailsContent" class="detailsContent"></div>
+    </div>
+  </div>
+
+  <!-- AFSLUT -->
+  <div id="completeModal" class="modal">
+    <div class="confirmCard">
+      <h3>Afslut opgave</h3>
+      <p>Er du sikker på, at du vil afslutte denne opgave?</p>
+
+      <div class="confirmBtns">
+        <button id="cancelComplete" class="secondaryBtn" type="button">Annuller</button>
+        <button id="confirmComplete" class="dangerBtn" type="button">Afslut</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLET -->
+  <div id="deleteModal" class="modal">
+    <div class="confirmCard">
+      <h3>Slet opgave</h3>
+      <p>Er du sikker på, at du vil slette opgaven permanent?</p>
+
+      <div class="confirmBtns">
+        <button id="cancelDelete" class="secondaryBtn" type="button">Annuller</button>
+        <button id="confirmDelete" class="dangerBtn" type="button">Slet permanent</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <!-- BUNDMENU IDENTISK STIL -->
+  <div class="bottomBar">
+    <button id="menuButton" class="menuButton" type="button" aria-label="Åbn menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="menuPopup" id="menuPopup">
+
+    <button onclick="location.href='forside.html'">Forside</button>
+    <button onclick="location.href='opgaver.html'">Opgaver</button>
+    <button onclick="location.href='timer.html'">Registrer timer</button>
+    <button onclick="location.href='profil.html'">Profil</button>
+    
+    <button id="logoutBtn" class="logoutBtn">
+    Log ud
+    </button>
+    
+    </div>
+
+  <script type="module" src="opgaver.js"></script>
+</body>
+</html>

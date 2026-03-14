@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>René oversigt</title>
+
+<link rel="icon" href="malerfirma.png">
+<link rel="stylesheet" href="chef.css">
+
+</head>
+
+<body>
+
+<main class="page">
+
+<section class="topSection">
+
+<div>
+<p class="eyebrow">Malerfirmaet Rene Jensen</p>
+<h1>René oversigt</h1>
+</div>
+
+<a href="forside.html" class="backBtn">Tilbage</a>
+
+</section>
+
+
+
+<section class="card">
+
+<div class="sectionHeader">
+<div>
+<h2>Login anmodninger</h2>
+<p>Godkend eller afvis nye brugere</p>
+</div>
+</div>
+
+<div id="pendingUsers" class="listArea">
+<p class="emptyText">Loader anmodninger...</p>
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<div class="sectionHeader">
+<div>
+<h2>Materialeliste</h2>
+<p>Tilføj nye materialer til systemet</p>
+</div>
+</div>
+
+<div class="materialForm">
+<input type="text" id="materialName" placeholder="Navn på materiale">
+<button id="addMaterialBtn" class="primaryBtn">Tilføj materiale</button>
+</div>
+
+<div id="materialsList" class="listArea">
+<p class="emptyText">Loader materialer...</p>
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<div class="sectionHeader">
+<div>
+<h2>Medarbejdere</h2>
+<p>Se oplysninger og timer for hver medarbejder</p>
+</div>
+</div>
+
+<div id="employeesList" class="listArea">
+<p class="emptyText">Loader medarbejdere...</p>
+</div>
+
+</section>
+
+</main>
+
+
+
+<div id="overlay"></div>
+
+
+
+<div id="employeeModal">
+
+<div class="modalBox">
+
+<div class="modalTop">
+<h3>Medarbejder</h3>
+<button id="closeEmployeeModal" class="iconBtn">×</button>
+</div>
+
+
+<div class="employeeInfo">
+
+<div class="infoRow">
+<span>Navn</span>
+<strong id="employeeName">-</strong>
+</div>
+
+<div class="infoRow">
+<span>Email</span>
+<strong id="employeeEmail">-</strong>
+</div>
+
+<div class="infoRow">
+<span>Telefon</span>
+<strong id="employeePhone">-</strong>
+</div>
+
+<div class="infoRow">
+<span>Status</span>
+<strong id="employeeStatus">-</strong>
+</div>
+
+</div>
+
+
+<div class="hoursSection">
+
+<h4>Registrerede timer</h4>
+
+<div id="employeeHoursList" class="hoursList">
+<p class="emptyText">Loader timer...</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="chef.js"></script>
+
+</body>
+</html>

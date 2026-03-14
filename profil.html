@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profil</title>
+
+<link rel="stylesheet" href="profil.css">
+<link rel="icon" href="malerfirma.png">
+
+</head>
+
+<body>
+
+<main class="container">
+
+<header class="header">
+
+<h1>Din profil</h1>
+<p class="subtitle">Opdater dine oplysninger</p>
+
+</header>
+
+
+<section class="card">
+
+<label>Fornavn</label>
+<input type="text" id="firstName">
+
+<label>Efternavn</label>
+<input type="text" id="lastName">
+
+<label>Email</label>
+<input type="email" id="email">
+
+<label>Telefon</label>
+<input type="tel" id="phone">
+
+<label>Ny kode</label>
+<input type="password" id="password" placeholder="Efterlad tom hvis uændret">
+
+<button id="saveBtn" class="primaryBtn">
+
+Gem ændringer
+
+</button>
+
+</section>
+
+</main>
+
+
+
+<!-- BUND MENU -->
+
+<div class="bottomBar">
+
+<button class="menuButton" id="menuButton">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+
+<div class="menuPopup" id="menuPopup">
+
+    <button onclick="location.href='forside.html'">Forside</button>
+    <button onclick="location.href='opgaver.html'">Opgaver</button>
+    <button onclick="location.href='timer.html'">Registrer timer</button>
+    <button onclick="location.href='profil.html'">Profil</button>
+    
+    <button id="logoutBtn" class="logoutBtn">
+    Log ud
+    </button>
+    
+    </div>
+
+
+<script type="module" src="profil.js"></script>
+
+</body>
+</html>

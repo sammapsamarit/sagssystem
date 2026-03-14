@@ -1,0 +1,139 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:system-ui;
+    }
+    
+    body{
+    background:#f4f6fb;
+    min-height:100vh;
+    padding:20px;
+    padding-bottom:120px;
+    color:#111827;
+    }
+    
+    .container{
+    max-width:600px;
+    margin:auto;
+    }
+    
+    .header{
+    margin-bottom:25px;
+    }
+    
+    .header h1{
+    font-size:28px;
+    font-weight:700;
+    }
+    
+    .subtitle{
+    font-size:14px;
+    color:#6b7280;
+    }
+    
+    .card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    }
+    
+    .card label{
+    font-size:13px;
+    color:#6b7280;
+    }
+    
+    .card input{
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    font-size:15px;
+    }
+    
+    .primaryBtn{
+    margin-top:10px;
+    background:linear-gradient(90deg,#1f3c88,#3050b5);
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:16px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    }
+    
+    
+    
+    /* BUND MENU */
+    
+    .bottomBar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:linear-gradient(90deg,#1f3c88,#3050b5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    }
+    
+    .menuButton{
+    width:70px;
+    height:70px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    transform:translateY(-25px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    border:none;
+    }
+    
+    .menuButton span{
+    width:24px;
+    height:3px;
+    background:#1f3c88;
+    border-radius:3px;
+    }
+    
+    .menuPopup{
+    position:fixed;
+    left:50%;
+    bottom:-260px;
+    transform:translateX(-50%);
+    width:240px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    display:flex;
+    flex-direction:column;
+    transition:0.35s;
+    }
+    
+    .menuPopup.active{
+    bottom:110px;
+    }
+    
+    .menuPopup button{
+    padding:16px;
+    border:none;
+    background:none;
+    font-size:15px;
+    cursor:pointer;
+    }
+    
+    .menuPopup button:not(:last-child){
+    border-bottom:1px solid #eef2ff;
+    }
+    

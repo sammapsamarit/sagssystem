@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registrer timer</title>
+
+<link rel="stylesheet" href="timer.css">
+<link rel="icon" href="malerfirma.png">
+
+</head>
+
+<body>
+
+<main class="container">
+
+<header class="pageHeader">
+
+<div>
+<p class="eyebrow">Sagstyring</p>
+<h1>Registrer timer</h1>
+</div>
+
+</header>
+
+
+
+<section class="card">
+
+<label>Opgave</label>
+<select id="taskSelect"></select>
+
+<label>Starttid</label>
+<input type="time" id="startTime">
+
+<label>Sluttid</label>
+<input type="time" id="endTime">
+
+<label>Pause (minutter)</label>
+<input type="number" id="pauseTime" value="0">
+
+<div class="resultCard">
+
+<span>Arbejdstimer</span>
+<h2 id="hoursResult">0.00</h2>
+
+</div>
+
+<button id="saveBtn" class="primaryBtn">
+
+Registrer timer
+
+</button>
+
+</section>
+
+
+
+<section>
+
+<h2>Dine registreringer</h2>
+
+<div id="timeList"></div>
+
+</section>
+
+</main>
+
+
+
+<div class="bottomBar">
+
+<button class="menuButton" id="menuButton">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+
+<div class="menuPopup" id="menuPopup">
+
+    <button onclick="location.href='forside.html'">Forside</button>
+    <button onclick="location.href='opgaver.html'">Opgaver</button>
+    <button onclick="location.href='timer.html'">Registrer timer</button>
+    <button onclick="location.href='profil.html'">Profil</button>
+    
+    <button id="logoutBtn" class="logoutBtn">
+    Log ud
+    </button>
+    
+    </div>
+
+
+<script type="module" src="timer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    }
+    
+    body{
+    background:#f5f7fc;
+    color:#1f2937;
+    min-height:100vh;
+    }
+    
+    .page{
+    max-width:700px;
+    margin:auto;
+    padding:20px 16px 40px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    }
+    
+    
+    
+    /* HEADER */
+    
+    .topSection{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    }
+    
+    .eyebrow{
+    font-size:12px;
+    color:#6b7280;
+    margin-bottom:4px;
+    }
+    
+    h1{
+    font-size:26px;
+    font-weight:700;
+    }
+    
+    h2{
+    font-size:18px;
+    margin-bottom:4px;
+    }
+    
+    h4{
+    font-size:15px;
+    margin-bottom:12px;
+    }
+    
+    .sectionHeader p{
+    font-size:13px;
+    color:#6b7280;
+    }
+    
+    
+    
+    /* BACK BUTTON */
+    
+    .backBtn{
+    text-decoration:none;
+    background:white;
+    color:#1f3c88;
+    border:1px solid #dbe3ff;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+    
+    
+    
+    /* CARDS */
+    
+    .card{
+    background:white;
+    border-radius:22px;
+    padding:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    }
+    
+    .listArea{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    }
+    
+    .emptyText{
+    font-size:14px;
+    color:#6b7280;
+    }
+    
+    
+    
+    /* USER / EMPLOYEE CARD */
+    
+    .userCard,
+    .materialCard,
+    .employeeCard{
+    background:#f9fbff;
+    border:1px solid #e6ecff;
+    border-radius:16px;
+    padding:14px;
+    }
+    
+    .userCardTop,
+    .employeeCardTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    }
+    
+    .userMain,
+    .employeeMain{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    }
+    
+    .userMain strong,
+    .employeeMain strong{
+    font-size:15px;
+    }
+    
+    .userMain span,
+    .employeeMain span{
+    font-size:13px;
+    color:#6b7280;
+    }
+    
+    
+    
+    /* BUTTONS */
+    
+    .actions{
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+    flex-wrap:wrap;
+    }
+    
+    .primaryBtn,
+    .secondaryBtn,
+    .rejectBtn,
+    .smallBtn{
+    border:none;
+    cursor:pointer;
+    border-radius:14px;
+    font-weight:600;
+    }
+    
+    .primaryBtn{
+    background:linear-gradient(90deg,#1f3c88,#3050b5);
+    color:white;
+    padding:13px 16px;
+    }
+    
+    .secondaryBtn{
+    background:#ecf2ff;
+    color:#1f3c88;
+    padding:10px 14px;
+    }
+    
+    .rejectBtn{
+    background:#fff1f2;
+    color:#be123c;
+    padding:10px 14px;
+    }
+    
+    .smallBtn{
+    background:#eef2ff;
+    color:#1f3c88;
+    padding:9px 12px;
+    font-size:13px;
+    }
+    
+    
+    
+    /* MATERIAL FORM */
+    
+    .materialForm{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    }
+    
+    .materialForm input{
+    padding:14px;
+    border:1px solid #dbe3ff;
+    border-radius:16px;
+    font-size:14px;
+    }
+    
+    
+    
+    /* TAG */
+    
+    .tag{
+    background:#eef2ff;
+    color:#1f3c88;
+    font-size:12px;
+    font-weight:700;
+    padding:6px 10px;
+    border-radius:999px;
+    }
+    
+    
+    
+    /* OVERLAY */
+    
+    #overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    opacity:0;
+    pointer-events:none;
+    transition:0.25s;
+    z-index:40;
+    }
+    
+    #overlay.active{
+    opacity:1;
+    pointer-events:auto;
+    }
+    
+    
+    
+    /* MODAL */
+    
+    #employeeModal{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:-100%;
+    display:flex;
+    justify-content:center;
+    transition:0.35s ease;
+    z-index:50;
+    }
+    
+    #employeeModal.active{
+    bottom:0;
+    }
+    
+    .modalBox{
+    width:100%;
+    max-width:420px;
+    background:white;
+    border-top-left-radius:26px;
+    border-top-right-radius:26px;
+    padding:18px;
+    max-height:85vh;
+    overflow:auto;
+    box-shadow:0 -25px 50px rgba(0,0,0,0.25);
+    }
+    
+    
+    
+    /* MODAL HEADER */
+    
+    .modalTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+    }
+    
+    .modalTop h3{
+    font-size:20px;
+    }
+    
+    .iconBtn{
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:50%;
+    background:#eef2ff;
+    color:#1f3c88;
+    font-size:22px;
+    cursor:pointer;
+    }
+    
+    
+    
+    /* EMPLOYEE INFO */
+    
+    .employeeInfo{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:20px;
+    }
+    
+    .infoRow{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 0;
+    border-bottom:1px solid #eef2ff;
+    }
+    
+    .infoRow span{
+    color:#6b7280;
+    font-size:13px;
+    }
+    
+    .infoRow strong{
+    font-size:14px;
+    }
+    
+    
+    
+    /* HOURS */
+    
+    .hoursList{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    }
+    
+    .hourCard{
+    background:#f9fbff;
+    border:1px solid #e6ecff;
+    border-radius:16px;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    }
+    
+    .hourCard strong{
+    font-size:14px;
+    color:#1f3c88;
+    }
+    
+    .hourCard span{
+    font-size:13px;
+    color:#6b7280;
+    }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Log Ind</title>
+
+<link rel="icon" type="image/png" href="malerfirma.png">
+
+<link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+<div class="loginWrapper">
+
+<div class="loginBox">
+
+<img src="malerfirma.png" class="logo">
+
+<h2>Sagstyring</h2>
+<p class="subtitle">Malerfirmaet René Jensen</p>
+
+<div class="tabs">
+
+<button id="loginTab" class="active">Login</button>
+<button id="registerTab">Registrer</button>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<form id="loginForm">
+
+<input type="email" id="loginEmail" placeholder="Email" required>
+
+<input type="password" id="loginPassword" placeholder="Kode" required>
+
+<button type="submit" class="mainButton" id="loginButton">
+
+<span class="btnText">Login</span>
+
+<img src="malerfirma.png" class="btnSpinner" id="btnSpinner">
+
+</button>
+
+</form>
+
+
+<!-- REGISTER -->
+
+<form id="registerForm" class="hidden">
+
+<input type="text" id="name" placeholder="Navn" required>
+
+<input type="email" id="email" placeholder="Email" required>
+
+<input type="tel" id="phone" placeholder="Telefonnummer" required>
+
+<input type="password" id="password" placeholder="Kode" required>
+
+<button type="submit" class="mainButton">
+
+Registrer bruger
+
+</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+</div>
+
+<script type="module" src="login.js"></script>
+
+</body>
+</html>
