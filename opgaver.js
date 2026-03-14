@@ -199,20 +199,21 @@ function openEditTask(taskId, task) {
   openModal(taskModal);
 }
 
+/* KUN MATEMATIKKEN ER ÆNDRET HER */
 function calculateWorkedHours(start, end, pause) {
   if (!start || !end) return 0;
 
-  const startDate = new Date(`1970-01-01T${start}:00`);
-  const endDate = new Date(`1970-01-01T${end}:00`);
+  const [sh, sm] = start.split(":").map(Number);
+  const [eh, em] = end.split(":").map(Number);
 
-  let hours = (endDate - startDate) / 3600000;
-  hours -= Number(pause || 0) / 60;
+  let totalMinutes = (eh * 60 + em) - (sh * 60 + sm);
+  totalMinutes -= Number(pause || 0);
 
-  if (Number.isNaN(hours) || hours < 0) {
+  if (Number.isNaN(totalMinutes) || totalMinutes < 0) {
     return 0;
   }
 
-  return hours;
+  return totalMinutes;
 }
 
 async function openDetails(taskId, task) {
@@ -227,20 +228,20 @@ async function openDetails(taskId, task) {
   hoursSnapshot.forEach(docSnap => {
     const data = docSnap.data();
     const userId = data.userId || "ukendt";
-    const workedHours = calculateWorkedHours(data.start, data.end, data.pause);
+    const workedMinutes = calculateWorkedHours(data.start, data.end, data.pause);
 
     if (!employeeMap.has(userId)) {
       employeeMap.set(userId, 0);
     }
 
-    employeeMap.set(userId, employeeMap.get(userId) + workedHours);
+    employeeMap.set(userId, employeeMap.get(userId) + workedMinutes);
   });
 
   let employeesHtml = "<p>Ingen registrerede timer på denne opgave endnu.</p>";
 
   if (employeeMap.size > 0) {
     const rows = await Promise.all(
-      Array.from(employeeMap.entries()).map(async ([userId, hours]) => {
+      Array.from(employeeMap.entries()).map(async ([userId, totalMinutes]) => {
         let displayName = "Ukendt medarbejder";
 
         try {
@@ -252,10 +253,14 @@ async function openDetails(taskId, task) {
           displayName = "Ukendt medarbejder";
         }
 
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+        const timeString = `${hours}:${minutes.toString().padStart(2, "0")}`;
+
         return `
           <div class="employeeRow">
             <span class="employeeName">${displayName}</span>
-            <span class="employeeHours">${hours.toFixed(2)} t</span>
+            <span class="employeeHours">${timeString} t</span>
           </div>
         `;
       })
