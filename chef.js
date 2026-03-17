@@ -313,7 +313,10 @@ async function openEmployeeModal(userId){
   const hours = [];
 
   hoursSnapshot.forEach((docSnap)=>{
-    hours.push(docSnap.data());
+    hours.push({
+      id: docSnap.id,
+      ...docSnap.data()
+    });
   });
 
   employeeHoursList.innerHTML = "";
@@ -374,7 +377,20 @@ async function openEmployeeModal(userId){
       <span>Slut: ${end}</span>
       <span>Pause: ${pause} min</span>
       <span>${workedText} timer</span>
+      <button class="rejectBtn deleteTimeBtn">Slet registrering</button>
     `;
+
+    card.querySelector(".deleteTimeBtn").addEventListener("click", async ()=>{
+
+      const confirmDelete = confirm("Er du sikker på at du vil slette denne tidsregistrering?");
+
+      if(!confirmDelete) return;
+
+      await deleteDoc(doc(db,"time_entries",entry.id));
+
+      await openEmployeeModal(userId);
+
+    });
 
     employeeHoursList.appendChild(card);
 
