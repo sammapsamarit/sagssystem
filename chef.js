@@ -351,11 +351,25 @@ async function openEmployeeModal(userId){
 
     }
 
+    /* 🔥 NYT: DATO */
+    let dateText = "-";
+
+    if(entry.date){
+      const d = entry.date.toDate ? entry.date.toDate() : new Date(entry.date);
+
+      dateText = d.toLocaleDateString("da-DK",{
+        day:"2-digit",
+        month:"2-digit",
+        year:"numeric"
+      });
+    }
+
     const card = document.createElement("div");
     card.className = "hourCard";
 
     card.innerHTML = `
       <strong>${task}</strong>
+      <span>Dato: ${dateText}</span>
       <span>Start: ${start}</span>
       <span>Slut: ${end}</span>
       <span>Pause: ${pause} min</span>
